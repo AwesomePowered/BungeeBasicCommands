@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
+import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Command;
 
 public class vote extends Command {
@@ -18,9 +19,10 @@ public class vote extends Command {
 
 	@Override
 	public void execute(CommandSender sender, String[] arg1) {
+		if (ProxyServer.getInstance().getConfigurationAdapter().getBoolean("online_mode",true)) {
 		List <String> vote = plugin.getConfig().getStringList("vote");
 		for (String str : vote)
-			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', str));plugin.GFYS();
+			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', str));
+		}
 	}
-
 }

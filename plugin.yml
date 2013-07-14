@@ -1,4 +1,5 @@
 name: BasicCommands
 version: 0.1
 author: LaxWasHere
+depends: [BungeeYAML]
 main: net.lazlecraft.bc.BasicCommands
