@@ -1,15 +1,16 @@
-package net.lazlecraft.bc;
+package net.lazlecraft.basicccomands.Commands;
 
 import java.util.List;
 
+import net.lazlecraft.basicccomands.BasicCommands;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Command;
 
-public class website extends Command {
+public class WebsiteCommand extends Command {
 	
-	public website(BasicCommands plugin) {
+	public WebsiteCommand(BasicCommands plugin) {
 		super("website");
 		this.plugin = plugin;
 		// TODO Auto-generated constructor stub

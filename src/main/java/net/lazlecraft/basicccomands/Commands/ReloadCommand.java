@@ -1,15 +1,16 @@
-package net.lazlecraft.bc;
+package net.lazlecraft.basicccomands.Commands;
 
+import net.lazlecraft.basicccomands.BasicCommands;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Command;
 
-public class bcreload extends Command {
+public class ReloadCommand extends Command {
 	
 	BasicCommands plugin;
 
-	public bcreload(BasicCommands plugin) {
+	public ReloadCommand(BasicCommands plugin) {
 		super("bcreload");
 		this.plugin = plugin;
 		// TODO Auto-generated constructor stub

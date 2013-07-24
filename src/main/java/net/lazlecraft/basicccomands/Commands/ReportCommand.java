@@ -1,16 +1,17 @@
-package net.lazlecraft.bc;
+package net.lazlecraft.basicccomands.Commands;
 
+import net.lazlecraft.basicccomands.BasicCommands;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
-public class report extends Command {
+public class ReportCommand extends Command {
 	
 	BasicCommands plugin;
 
-	public report(BasicCommands plugin) {
+	public ReportCommand(BasicCommands plugin) {
 		super("report");
 		this.plugin = plugin;
 		// TODO Auto-generated constructor stub
@@ -24,6 +25,7 @@ public class report extends Command {
 		if (args.length == 0) {
 			sender.sendMessage(ChatColor.RED + "Usage:" + ChatColor.GREEN + " /report <player> <reason>");
 		} else if (args.length >= 2) {
+			sender.sendMessage(ChatColor.GREEN + "Successfully reported " + ChatColor.RED + args[0]);
 			StringBuilder sb = new StringBuilder();
 			for (int i = 1; i < args.length; i++){
 			sb.append(args[i]).append(" ");
