@@ -1,5 +1,10 @@
 package net.lazlecraft.basicccomands.Commands;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import net.lazlecraft.basicccomands.BasicCommands;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
@@ -38,6 +43,22 @@ public class ReportCommand extends Command {
 					p.sendMessage(plugin.prefix + ChatColor.GOLD + "Player: " + ChatColor.GREEN + args[0]);
 					p.sendMessage(plugin.prefix + ChatColor.GOLD + "Server: " + ChatColor.GREEN + sndr.getServer().getInfo().getName());
 					p.sendMessage(plugin.prefix + ChatColor.GOLD + "Reason: " + ChatColor.GREEN + reportReason);
+					if (plugin.getConfig().getBoolean("LogReports")) {
+						try {
+							PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("plugins/BasicCommands/Reports.txt", true)));
+							pw.println (
+						    		"Reporter: " + sender +
+						    		" Reported: " + args[0].toString() +
+						    		" Server: " + sndr.getServer().getInfo().getName() +
+						    		" Reason: " + reportReason
+						    		);
+						    pw.close(); 
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					    
+					}
 				}
 				}
 			}
