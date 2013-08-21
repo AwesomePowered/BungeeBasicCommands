@@ -1,4 +1,4 @@
-package net.lazlecraft.basicccomands;
+package net.lazlecraft.basiccommands;
 
 
 import net.md_5.bungee.api.ProxyServer;

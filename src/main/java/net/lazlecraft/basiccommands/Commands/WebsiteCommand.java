@@ -1,8 +1,8 @@
-package net.lazlecraft.basicccomands.Commands;
+package net.lazlecraft.basiccommands.Commands;
 
 import java.util.List;
 
-import net.lazlecraft.basicccomands.BasicCommands;
+import net.lazlecraft.basiccommands.BasicCommands;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;

@@ -1,13 +1,13 @@
-package net.lazlecraft.basicccomands;
+package net.lazlecraft.basiccommands;
 
 import java.io.IOException;
 
 import net.craftminecraft.bungee.bungeeyaml.pluginapi.ConfigurablePlugin;
-import net.lazlecraft.basicccomands.Commands.ReloadCommand;
-import net.lazlecraft.basicccomands.Commands.DonateCommand;
-import net.lazlecraft.basicccomands.Commands.ReportCommand;
-import net.lazlecraft.basicccomands.Commands.VoteCommand;
-import net.lazlecraft.basicccomands.Commands.WebsiteCommand;
+import net.lazlecraft.basiccommands.Commands.DonateCommand;
+import net.lazlecraft.basiccommands.Commands.ReloadCommand;
+import net.lazlecraft.basiccommands.Commands.ReportCommand;
+import net.lazlecraft.basiccommands.Commands.VoteCommand;
+import net.lazlecraft.basiccommands.Commands.WebsiteCommand;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.ProxyServer;
 
