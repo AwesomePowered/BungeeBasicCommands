@@ -4,6 +4,7 @@
   <artifactId>BasicCommands</artifactId>
   <version>1.0-${BUILD_NUMBER}</version>
   <name>BasicCommands</name>
+  <packaging>jar</packaging>
     <build>
         <defaultGoal>clean package</defaultGoal>
         <finalName>${project.name}</finalName>
@@ -52,5 +53,10 @@
   	  			<artifactId>bungeeyaml</artifactId>
   	  			<version>1.2.4-SNAPSHOT</version>
   		</dependency>
+  		<dependency>
+                <groupId>org.pircbotx</groupId>
+                <artifactId>pircbotx</artifactId>
+                <version>1.9</version>
+        </dependency>
     </dependencies>
 </project>

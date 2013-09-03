@@ -2,6 +2,8 @@ package net.lazlecraft.basiccommands;
 
 import java.io.IOException;
 
+import org.pircbotx.PircBotX;
+
 import net.craftminecraft.bungee.bungeeyaml.pluginapi.ConfigurablePlugin;
 import net.lazlecraft.basiccommands.Commands.DonateCommand;
 import net.lazlecraft.basiccommands.Commands.ReloadCommand;
@@ -14,7 +16,9 @@ import net.md_5.bungee.api.ProxyServer;
 public class BasicCommands extends ConfigurablePlugin {
 	
 	public String prefix = ChatColor.GOLD +""+ ChatColor.BOLD + "[" + ChatColor.RED + ChatColor.BOLD + "bCommands" + ChatColor.GOLD + ChatColor.BOLD + "] ";
-	
+	public static String BotName;
+	public static String BotNetwork;
+	public static String BotChannel;
 	
 	public void onEnable() {
 		registerFeature();
@@ -23,6 +27,13 @@ public class BasicCommands extends ConfigurablePlugin {
 	        metrics.start();
 	    } 
 	    catch (IOException e) {}
+	}
+	
+	public static void main(String[] args) throws Exception {
+        PircBotX bot = new PircBotX();
+        bot.setName(BotName);
+        bot.connect(BotNetwork);
+        bot.joinChannel(BotChannel);
 	}
 	
 	public void registerFeature() {
@@ -34,6 +45,9 @@ public class BasicCommands extends ConfigurablePlugin {
 			this.getProxy().getPluginManager().registerCommand(this, new WebsiteCommand(this));
 			this.getProxy().getPluginManager().registerCommand(this, new ReloadCommand(this));
 			this.getProxy().getPluginManager().registerCommand(this, new ReportCommand(this));
+			BotName = this.getConfig().getString("BotName");
+			BotNetwork = this.getConfig().getString("BotNetwork");
+			BotChannel = this.getConfig().getString("BotChannel");
 		}
 		else {
 			System.out.println(ChatColor.GREEN + "A message from LaxWasHere");
