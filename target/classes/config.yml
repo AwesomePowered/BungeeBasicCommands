@@ -7,7 +7,7 @@
 #                                            By: LaxWasHere
 LogReports: true
 IRC:
-    ReportsToIRC: true
+    ReportsToIRC: false
     Channel: #MinecraftStaff
 vote:
 - '&6====================================================='
