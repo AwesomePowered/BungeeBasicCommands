@@ -6,9 +6,9 @@
 # |____/ \__,_|___/_|\___|\_____\___/|_| |_| |_|_| |_| |_|\__,_|_| |_|\__,_|___/                                     
 #                                            By: LaxWasHere
 LogReports: true
-BotName: BasicCommands
-BotNetwork: irc.esper.net
-BotChannel: #md_5
+IRC:
+    ReportsToIRC: true
+    Channel: #MinecraftStaff
 vote:
 - '&6====================================================='
 - '&a Vote for us at http://minecraftservers.org/server/54083'

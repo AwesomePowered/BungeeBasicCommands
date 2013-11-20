@@ -39,6 +39,10 @@
       		<id>craftminecraft-dev</id>
      		 <url>http://repo.craftminecraft.net/content/groups/public/</url>
     	</repository>
+    	<repository>
+			<id>PoweredByHate</id>
+			<url>http://ci.poweredbyhate.net/plugin/repository/everything</url>
+		</repository>
     </repositories>
     <dependencies>
         <dependency>
@@ -54,9 +58,9 @@
   	  			<version>1.2.4-SNAPSHOT</version>
   		</dependency>
   		<dependency>
-                <groupId>org.pircbotx</groupId>
-                <artifactId>pircbotx</artifactId>
-                <version>1.9</version>
-        </dependency>
+  		  	<groupId>net.PoweredByAwesome</groupId>
+  	  			<artifactId>BungeeIRC</artifactId>
+  	  			<version>1.0-1</version>
+  		</dependency>
     </dependencies>
 </project>

@@ -2,8 +2,6 @@ package net.lazlecraft.basiccommands;
 
 import java.io.IOException;
 
-import org.pircbotx.PircBotX;
-
 import net.craftminecraft.bungee.bungeeyaml.pluginapi.ConfigurablePlugin;
 import net.lazlecraft.basiccommands.Commands.DonateCommand;
 import net.lazlecraft.basiccommands.Commands.ReloadCommand;
@@ -15,10 +13,8 @@ import net.md_5.bungee.api.ProxyServer;
 
 public class BasicCommands extends ConfigurablePlugin {
 	
+	public String IRChan;
 	public String prefix = ChatColor.GOLD +""+ ChatColor.BOLD + "[" + ChatColor.RED + ChatColor.BOLD + "bCommands" + ChatColor.GOLD + ChatColor.BOLD + "] ";
-	public static String BotName;
-	public static String BotNetwork;
-	public static String BotChannel;
 	
 	public void onEnable() {
 		registerFeature();
@@ -29,25 +25,16 @@ public class BasicCommands extends ConfigurablePlugin {
 	    catch (IOException e) {}
 	}
 	
-	public static void main(String[] args) throws Exception {
-        PircBotX bot = new PircBotX();
-        bot.setName(BotName);
-        bot.connect(BotNetwork);
-        bot.joinChannel(BotChannel);
-	}
-	
 	public void registerFeature() {
 		if (ProxyServer.getInstance().getConfigurationAdapter().getBoolean("online_mode",true)) {
 			this.getConfig().options().copyDefaults(true);
 			this.saveConfig();
+			IRChan = this.getConfig().getString("IRC.Channel");
 			this.getProxy().getPluginManager().registerCommand(this, new VoteCommand(this));
 			this.getProxy().getPluginManager().registerCommand(this, new DonateCommand(this));
 			this.getProxy().getPluginManager().registerCommand(this, new WebsiteCommand(this));
 			this.getProxy().getPluginManager().registerCommand(this, new ReloadCommand(this));
 			this.getProxy().getPluginManager().registerCommand(this, new ReportCommand(this));
-			BotName = this.getConfig().getString("BotName");
-			BotNetwork = this.getConfig().getString("BotNetwork");
-			BotChannel = this.getConfig().getString("BotChannel");
 		}
 		else {
 			System.out.println(ChatColor.GREEN + "A message from LaxWasHere");

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import net.lazlecraft.basiccommands.BasicCommands;
+import net.lazlecraft.bungeeirc.Messenger;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
@@ -43,6 +44,12 @@ public class ReportCommand extends Command {
 					p.sendMessage(plugin.prefix + ChatColor.GOLD + "Player: " + ChatColor.GREEN + args[0]);
 					p.sendMessage(plugin.prefix + ChatColor.GOLD + "Server: " + ChatColor.GREEN + sndr.getServer().getInfo().getName());
 					p.sendMessage(plugin.prefix + ChatColor.GOLD + "Reason: " + ChatColor.GREEN + reportReason);
+					if (plugin.getConfig().getBoolean("IRC.ReportsToIRC")) {
+						Messenger.sendChanMessage(plugin.IRChan,plugin.prefix + ChatColor.RED + "New report from " + ChatColor.GREEN + sender);
+						Messenger.sendChanMessage(plugin.IRChan,plugin.prefix + ChatColor.GOLD + "Player: " + ChatColor.GREEN + args[0]);
+						Messenger.sendChanMessage(plugin.IRChan,plugin.prefix + ChatColor.GOLD + "Server: " + ChatColor.GREEN + sndr.getServer().getInfo().getName());
+						Messenger.sendChanMessage(plugin.IRChan,plugin.prefix + ChatColor.GOLD + "Reason: " + ChatColor.GREEN + reportReason);
+					}
 					if (plugin.getConfig().getBoolean("LogReports")) {
 						try {
 							PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("plugins/BasicCommands/Reports.txt", true)));
